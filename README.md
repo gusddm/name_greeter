@@ -13,3 +13,11 @@ npm install
 Con las dependencias instaladas, para ejecutar el servidor de node usar el siguiente comando, situados sobre el raiz del proyecto:
 
 npm start run
+
+Para pruebas ingresar a la siguiente url:
+
+http://localhost:7770/
+
+Esta solución se basó principalmente en React.js, Redux para el manejo del state de la app y Thunk para el middleware para manejar los requests asíncronos (buscar paises).
+
+
