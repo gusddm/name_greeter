@@ -7,9 +7,10 @@ const ActiveGreet = React.createClass({
     getAge(birthdateArr) {
         const now = new Date();
         var yearDif = now.getUTCFullYear() - birthdateArr[2];
-        if((birthdateArr[1] < now.getUTCMonth() + 1) || birthdateArr[0] < now.getUTCDay()) {
-            yearDif--;
-        }
+
+        if((birthdateArr[1] - 1 < now.getUTCMonth()) || birthdateArr[0] < now.getUTCDay()) {
+            yearDif++;
+        }       
         return yearDif;
     },
     getMonth(month) {

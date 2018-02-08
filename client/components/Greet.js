@@ -4,7 +4,7 @@ const Greet = React.createClass({
     render() {
         const {i, greet} = this.props;
         return (  
-            <figure key={i} className="figure" onClick={this.activateGreet.bind(this, i)}>
+            <figure className="figure" onClick={this.activateGreet.bind(this, i)}>
                 <div className='comment-form'>                                        
                     {greet.name} - {greet.country} - {greet.birthdate}
                 </div>
