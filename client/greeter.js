@@ -11,13 +11,14 @@ import 'babel-polyfill';
   Import Components
 */
 import App from './components/App';
+import Grid from './components/Grid';
 
 /* Import CSS */
 import css from  './styles/style.styl';
 
 /* Import our data store */
 import store, { history } from './store';
-import Form from './components/Form';
+
 
 /*
   Error Logging
@@ -38,7 +39,7 @@ const router = (
     { /* Tell the Router to use our enhanced history */ }
     <Router history={history}>
       <Route path="/" component={App}>
-      <IndexRoute component={Form}></IndexRoute>
+        <IndexRoute component={Grid}></IndexRoute>
       </Route>
     </Router>
   </Provider>

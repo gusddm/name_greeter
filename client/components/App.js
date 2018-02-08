@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/actionCreators';
+import { addGreet , activateGreet} from '../actions/actionCreators';
 import { countriesFetchData } from '../actions/actionCreators';
 import { Link } from 'react-router';
 
@@ -24,17 +24,20 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
+        greets: state.greets,
         countries : state.countries,
         hasErrored: state.itemsHasErrored,
         isLoading: state.itemsIsLoading
     };
   }
 
-  const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: (url) => dispatch(countriesFetchData(url))
-    }
-};
+const mapDispatchToProps = (dispatch) => {
+    return { 
+        fetchData: (url) => dispatch(countriesFetchData(url)),
+        addGreet:  bindActionCreators( addGreet, dispatch),
+        activateGreet:  bindActionCreators( activateGreet, dispatch)
+    }    
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
   
